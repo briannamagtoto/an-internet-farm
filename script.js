@@ -11,19 +11,23 @@ window.addEventListener('wheel', function(event) {
     });
 }, { passive: false });
 
-// Loading screen for internal navigation
+// loading screen for internal navigation
 document.addEventListener('DOMContentLoaded', function() {
     const internalLinks = document.querySelectorAll('a[href^="articles"], a[href^="a-zine"], a[href^="notes"]');
     
     internalLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
+        function handleNavigation(event) {
+            event.preventDefault();
+            event.stopPropagation();
             
             document.getElementById('loading-screen').style.display = 'flex';
             
             setTimeout(() => {
-                window.location.href = this.href;
+                window.location.href = link.href;
             }, 2500);
-        });
+        }
+        
+        link.addEventListener('click', handleNavigation);
+        link.addEventListener('touchstart', handleNavigation, { passive: false });
     });
 });
