@@ -1,0 +1,71 @@
+body {
+    font-family: "Anonymous Pro";
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1.5;
+    background-color: rgb(255, 251, 246);
+    color:#482401;
+}
+
+h1 { 
+    font-size: 2em; 
+    font-weight: 700; 
+} 
+
+h3 { 
+    font-size: 1.5em; 
+    font-weight: 700; 
+} 
+
+p { 
+    font-size: 1em; 
+    font-weight: 400; 
+} 
+
+blockquote { 
+    font-size: 2em; 
+    font-weight: 400; 
+} 
+
+pre { 
+    font-size: 1em; 
+    font-weight: 400; 
+}
+
+#farm {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 1rem;
+}
+
+.desc {
+    text-align: left;
+    margin: 0rem 15rem 0rem 15rem; 
+    padding: 1rem;
+}
+
+.back-nav {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    margin: 1rem 0;
+    background-color: rgba(249, 255, 67, 0.7);
+    color: #2cca36;
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.big {
+    text-align: center;
+    font-size: 4em;
+    margin-bottom: 0.25rem;
+}
+
+
+  a, a:visited, a:hover, a:active {
+      color: #2cca36;
+  }
+
+.hyperlink {
+   background-color: rgba(249, 255, 67, 0.7);
+}
