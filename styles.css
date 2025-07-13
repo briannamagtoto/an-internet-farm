@@ -44,6 +44,29 @@ pre {
     padding: 1rem;
 }
 
+/* for mobile styles */
+@media (max-width: 768px) {
+    .desc {
+        margin: 0 1rem 0 1rem;
+        padding: 0.5rem;
+    }
+    
+    #farm {
+        font-size: 0.6em; 
+        overflow-x: auto; 
+        white-space: pre; 
+    }
+    
+    .back-nav {
+        font-size: 1.2em;
+        padding: 0.4rem 1rem;
+    }
+    
+    .big {
+        font-size: 2.5em; 
+    }
+}
+
 .back-nav {
     display: inline-block;
     padding: 0.5rem 1.5rem;
@@ -53,6 +76,14 @@ pre {
     text-decoration: none;
     border-radius: 2px;
     font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.hyperlink:hover, .back-nav:hover {
+    background-color: rgb(247, 255, 23);
+    transform: translateY(-1px);
 }
 
 .big {
@@ -68,4 +99,6 @@ pre {
 
 .hyperlink {
    background-color: rgba(249, 255, 67, 0.7);
+   transition: all 0.3s ease;
 }
+
