@@ -10,3 +10,20 @@ window.addEventListener('wheel', function(event) {
         behavior: 'smooth'
     });
 }, { passive: false });
+
+// Loading screen for internal navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const internalLinks = document.querySelectorAll('a[href^="articles"], a[href^="a-zine"], a[href^="notes"]');
+    
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            document.getElementById('loading-screen').style.display = 'flex';
+            
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 2500);
+        });
+    });
+});
