@@ -51,7 +51,6 @@ pre {
     }
 }
 
-/* Tablet */
 @media screen and (max-width: 780px) {
     body {
         font-size: 0.7em;
