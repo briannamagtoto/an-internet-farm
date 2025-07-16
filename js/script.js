@@ -1,16 +1,27 @@
 // loading screen for internal navigation
 document.addEventListener('DOMContentLoaded', function() {
-    const internalLinks = document.querySelectorAll('a[href^="articles"], a[href^="a-zine"], a[href^="notes"]');
+    const internalLinks = document.querySelectorAll('a[href^="articles"], a[href^="a-zine"], a[href^="notes"], a[href="https://notes.aninternet.farm/"]');
     
     internalLinks.forEach(link => {
         function handleNavigation(event) {
             event.preventDefault();
             event.stopPropagation();
             
-            document.getElementById('loading-screen').style.display = 'flex';
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.style.display = 'flex';
+            }
             
             setTimeout(() => {
-                window.location.href = link.href;
+                if (link.href === "https://notes.aninternet.farm/") {
+                    window.open(link.href, '_blank');
+                    const loadingScreen = document.getElementById('loading-screen');
+                    if (loadingScreen) {
+                        loadingScreen.style.display = 'none';
+                    }
+                } else {
+                    window.location.href = link.href;
+                }
             }, 2500);
         }
         
