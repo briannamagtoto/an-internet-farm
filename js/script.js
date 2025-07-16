@@ -1,6 +1,6 @@
 // loading screen for internal navigation
 document.addEventListener('DOMContentLoaded', function() {
-    const internalLinks = document.querySelectorAll('a[href^="articles"], a[href^="a-zine"], a[href^="notes"], a[href="https://notes.aninternet.farm/"]');
+    const internalLinks = document.querySelectorAll('a[href^="articles"], a[href^="a-zine"], a[href^="notes"], a[href="http://notes.aninternet.farm/"]');
     
     internalLinks.forEach(link => {
         function handleNavigation(event) {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             setTimeout(() => {
-                if (link.href === "https://notes.aninternet.farm/") {
+                if (link.href === "http://notes.aninternet.farm/") {
                     window.open(link.href, '_blank');
                     const loadingScreen = document.getElementById('loading-screen');
                     if (loadingScreen) {
