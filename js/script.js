@@ -13,11 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             setTimeout(() => {
-                if (link.href === "https://notes.aninternet.farm/") {
-                    window.open(link.href, '_blank');
-                    const loadingScreen = document.getElementById('loading-screen');
-                    if (loadingScreen) {
-                        loadingScreen.style.display = 'none';
+                if (link.href === "https://notes.aninternet.farm/" || link.getAttribute('href') === "https://notes.aninternet.farm/") {
+                    const newWindow = window.open(link.href, '_blank');
+                    // Fallback for mobile if window.open is blocked
+                    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                        window.location.href = link.href;
+                    } else {
+                        const loadingScreen = document.getElementById('loading-screen');
+                        if (loadingScreen) {
+                            loadingScreen.style.display = 'none';
+                        }
                     }
                 } else {
                     window.location.href = link.href;
