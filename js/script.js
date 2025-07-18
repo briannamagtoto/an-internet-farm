@@ -33,6 +33,22 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', handleNavigation);
         link.addEventListener('touchstart', handleNavigation, { passive: false });
     });
+    
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.style.display = 'none';
+            }
+        }
+    });
+    
+    window.addEventListener('focus', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+            loadingScreen.style.display = 'none';
+        }
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
