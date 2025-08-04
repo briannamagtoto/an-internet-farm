@@ -1,6 +1,6 @@
 // loading screen for internal navigation
 document.addEventListener('DOMContentLoaded', function() {
-    const internalLinks = document.querySelectorAll('a[href^="articles"], a[href^="a-zine"], a[href="https://notes.aninternet.farm/"]');
+    const internalLinks = document.querySelectorAll('a[href^="a-zine"], a[href="https://notes.aninternet.farm/"], a[href="https://notes.aninternet.farm/articles"]');
     
     internalLinks.forEach(link => {
         function handleNavigation(event) {
@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             setTimeout(() => {
-                if (link.href === "https://notes.aninternet.farm/" || link.getAttribute('href') === "https://notes.aninternet.farm/") {
+                if (link.href === "https://notes.aninternet.farm/" || link.href === "https://notes.aninternet.farm/articles" || 
+                    link.getAttribute('href') === "https://notes.aninternet.farm/" || link.getAttribute('href') === "https://notes.aninternet.farm/articles") {
                     const newWindow = window.open(link.href, '_blank');
                     // Fallback for mobile if window.open is blocked
                     if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
